@@ -9,6 +9,7 @@ Printing the answer to the following questions:
 3. On which days did more than 1% of requests lead to errors?
 """
 
+import sys
 import psycopg2
 
 DBNAME = "news"
@@ -27,6 +28,7 @@ def run_query(query):
     except psycopg2.Error as e:
         print(e.pgerror)
         print(e.diag.severity)
+        sys.exit()
 
 
 def pretty_print(table, descrip):
