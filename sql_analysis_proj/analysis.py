@@ -59,7 +59,7 @@ def main():
 
     error_percentage = """\
     SELECT * from
-    (SELECT to_char(date, 'FMMonth, DD YYYY'),
+    (SELECT to_char(time, 'FMMonth, DD YYYY') as date,
     ROUND((100.0 * SUM(CASE WHEN status = '404 NOT FOUND' THEN 1 ELSE 0 END)
     / count(*)), 2) AS percent
     FROM log
