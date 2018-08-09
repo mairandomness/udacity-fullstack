@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+{% block content %}
+<div class= 'flash'>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul>
+		{% for message in messages %}
+		<li> <strong> {{ message }} </strong> </li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+
+</div>
+
+<div class="row padding-top padding-bottom">
+	<div class="col-md-1"></div>
+	<div class="col-md-10 padding-none">
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
+<div class="row light-pink-box vdivide">
+	<div class="col-md-3 margin">
+		<h2>Categories</h2>
+		{% for category in categories %}
+		<p><a href="{{ url_for('showCategory', category_name= category.name) }}">
+				{{ category.name }}
+			</a></p>
+		{% endfor %}
+	</div>
+	<div class="col-md-7 margin">
+		<p>
+			<a class="padding-none" href="{{ url_for('editCategory', category_name=
+				main_category.name) }}">Edit category</a> |
+			<a href="{{ url_for('deleteCategory', category_name= main_category.name) }}">Delete
+				category</a> |
+			<a href="{{ url_for('addItem') }}">Add Item</a>
+		</p>
+		<h2>{{ main_category.name }} Items ({{ main_category.items|length }} items)</h2>
+		{% for item in main_category.items %}
+		<p><a href="{{ url_for('showItem', category_name= item.category.name,
+				item_title= item.title) }}">
+				{{ item.title }}</a>
+		</p>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

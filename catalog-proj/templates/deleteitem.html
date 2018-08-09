@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+
+<div class="row padding-top padding-bottom">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 padding-none">
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<div class="row light-pink-box">
+    <div class="col-md-6 col-md-offset-1 padding-top padding-bottom">
+        <h2> Are you sure you want to delete {{item.title}}? </h2>
+        <form action="#" method= 'post'>
+            <button type="submit" class="btn btn-default delete"
+                id="submit" type="submit">
+                <span class="glyphicon glyphicon-trash"
+                    aria-hidden="true"></span>Delete</button>
+            <a href= '{{ url_for('showItem', category_name=item.category.name,
+                item_title=item.title
+                )}}'>
+                <button type="button" class="btn btn-default Cancel">
+                    <span class="glyphicon glyphicon-remove"
+                        aria-hidden="true"></span> Cancel</button>
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}
