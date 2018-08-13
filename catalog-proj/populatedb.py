@@ -15,7 +15,7 @@ session = DBSession()
 # Soccer category
 User1 = User(name="Robo Barista", email="tinnyTim@udacity.com",
              picture=('https://pbs.twimg.com/profile_images/2671170543/'
-             '18debd694829ed78203a5a36dd364160_400x400.png')
+             '18debd694829ed78203a5a36dd364160_400x400.png'))
 session.add(User1)
 session.commit()
 
@@ -70,4 +70,4 @@ session.add(Item2)
 session.add(Item3)
 session.commit()
 
-print "added catalog items!"
+print("added catalog items!")
