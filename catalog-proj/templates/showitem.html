@@ -11,8 +11,8 @@
     <h2>{{ item.title }}</h2>
     <p> Description: {{ item.description }} </p>
     <p>
-        <a href="{{ url_for('editItem', item_title=item.title) }}">Edit</a> |
-        <a href="{{ url_for('deleteItem', item_title=item.title)
+        <a href="{{ url_for('editItem', category_id=item.category.id, item_id=item.id) }}">Edit</a> |
+        <a href="{{ url_for('deleteItem', category_id=item.category.id, item_id=item.id)
             }}">Delete</a>
     </p>
 </div>
