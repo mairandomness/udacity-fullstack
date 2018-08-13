@@ -34,8 +34,8 @@
 	<div class="col-md-7 margin">
 		<p>
 			{% if 'username' in session %}
-			<a class="padding-none" href="{{ url_for('addItem')}}">Add Item</a> | <a
-				href="{{ url_for('addCategory')}}">Add Category</a>
+			<a class="padding-none" href="{{ url_for('addItem')}}">Add Item</a>
+			| <a href="{{ url_for('addCategory')}}">Add Category</a>
 			{% endif %}
 			<h2>Latest Items</h2>
 			{% for item in latest_items %}
