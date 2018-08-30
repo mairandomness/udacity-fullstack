@@ -14,6 +14,10 @@ var ViewModel = function() {
     }
   });
 
+  this.nicknames = ko.observableArray([
+      "Cutie", "Lovely Demon", "Lord of Destruction"
+  ]);
+
   this.incrementCounter = function() {
     this.clickCount(this.clickCount() + 1);
   };
