@@ -76,10 +76,6 @@ var ViewModel = function() {
   };
 };
 
-  this.setCat = function(cat) {
-    self.currentCat() = cat;
-  };
-
 ko.applyBindings(new ViewModel());
 
 this.nicknames = ko.observableArray([
