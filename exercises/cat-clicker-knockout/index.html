@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cat Clicker</title>
-</head>
-<body>
-    <ul id="cat-list"></ul>
-    <div id="cat">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cat Clicker</title>
+    </head>
+    <body>
+        <ul class="cat-list"></ul>
+        <div class="cat">
 
-        <h2 id="cat-name"></h2>
-        <div id="cat-count"></div>
-        <img id="cat-img" src="" alt="cute cat">
+            <h2 class="cat-name" data-bind="text: name"></h2>
+            <h3 class="cat-level" data-bind="text: catLevel"></h3>
+            <div class="cat-count" data-bind="text: clickCount"></div>
+            <img class="cat-img" data-bind="click: incrementCounter, attr: {src:
+                imgSrc}" src="" alt="cute cat">
 
-    </div>
-    <script src="js/lib/knockout-3.2.0.js"></script>
-    <script src="js/app.js"></script>
-</body>
+        </div>
+        <script src="js/lib/knockout-3.2.0.js"></script>
+        <script src="js/app.js"></script>
+    </body>
 </html>
